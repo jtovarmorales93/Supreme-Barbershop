@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,11 +18,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
             min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
             color: white;
             background: url("assets/fondo-barberia1.jpg") no-repeat center center;
             background-size: cover;
@@ -35,7 +36,6 @@
             content: "";
             position: absolute;
             inset: 0;
-
             background:
                 linear-gradient(
                     to bottom,
@@ -43,7 +43,6 @@
                     rgba(0, 0, 0, 0.45),
                     rgba(0, 0, 0, 0.60)
                 );
-
             z-index: 0;
         }
 
@@ -79,7 +78,6 @@
             background-clip: text;
 
             background-size: 200% auto;
-
             animation: brilhoMetalico 5s linear infinite;
 
             text-shadow:
@@ -105,6 +103,7 @@
             margin-top: 10px;
             font-size: 1rem;
             color: #e4e4e4;
+            font-weight: 300;
         }
 
         /* CONTEÚDO PRINCIPAL */
@@ -122,14 +121,11 @@
 
             text-align: center;
 
-            padding: 20px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
 
-            background: transparent;
+            padding: 20px;
 
             text-shadow:
                 0 3px 10px rgba(0, 0, 0, 0.9);
@@ -149,20 +145,26 @@
             }
         }
 
+        /* TÍTULO PRINCIPAL */
         .card-apresentacao h2 {
-            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1.2;
+            letter-spacing: 1px;
             margin-bottom: 25px;
+            max-width: 700px;
         }
 
+        /* TEXTO */
         .card-apresentacao p {
-            max-width: 700px;
+            max-width: 650px;
 
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+
             line-height: 1.9;
 
-            color: #f2f2f2;
+            color: rgba(255, 255, 255, 0.92);
 
             margin-bottom: 40px;
         }
@@ -179,7 +181,7 @@
                 #f7d774
             );
 
-            color: black;
+            color: #000;
 
             padding: 16px 38px;
 
@@ -202,13 +204,12 @@
         footer {
             text-align: center;
             padding: 20px;
-
             color: #d0d0d0;
-
             font-size: .9rem;
+            font-weight: 300;
         }
 
-        /* RESPONSIVO */
+        /* TABLETS */
         @media (max-width: 768px) {
 
             header {
@@ -216,7 +217,7 @@
             }
 
             .card-apresentacao h2 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
 
             .card-apresentacao p {
@@ -230,6 +231,7 @@
             }
         }
 
+        /* CELULARES */
         @media (max-width: 480px) {
 
             .card-apresentacao h2 {
@@ -237,7 +239,7 @@
             }
 
             .card-apresentacao p {
-                font-size: .9rem;
+                font-size: .92rem;
             }
 
             header p {
@@ -249,16 +251,18 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <h1>Barbearia Nilson</h1>
         <p>Agende seu horário em poucos cliques</p>
     </header>
 
+    <!-- APRESENTAÇÃO -->
     <main>
 
         <div class="card-apresentacao">
 
-            <h2>Seu estilo começa aqui</h2>
+            <h2>Tradição, estilo e personalidade</h2>
 
             <p>
                 Na Barbearia Nilson você encontra cortes modernos,
@@ -275,6 +279,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         © 2026 Barbearia Nilson. Todos os direitos reservados.
     </footer>
