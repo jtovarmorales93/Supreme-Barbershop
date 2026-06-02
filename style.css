@@ -447,7 +447,7 @@ display: flex;
 justify-content: center;
 margin-top: 15px;
 margin-bottom: 15px;
-transition: all 0.3s ease;
+transition: all 0.2s ease;
 opacity: 0;
 height: 0;
 overflow: hidden;
@@ -467,11 +467,10 @@ border-radius: 50%;
 border: 3px solid #ffffff;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-/* Recorta la imagen proporcionalmente para que NO se estire /
+
 object-fit: cover;
 object-position: center;
-/ Centra el rostro del barbero */
-}
+
 
 #notificacion.alerta-roja {
 background-color: #e74c3c;
@@ -500,7 +499,7 @@ padding: 0 10px;
 }
 
 /* Evita que elementos internos del header empujen o desborden */
-.header > * {
+.header {
 max-width: 100%;
 }
 
