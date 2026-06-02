@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agendamento</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1 class="titulo">Barbearia Nilson</h1>
+
+        <p class="bienvenida">
+            
+            Agende seu horário de forma rápida e simples.
+        </p>
+
+    </header>
+
+   <main class="container">
+
+        <section class="agendamiento">
+
+            <h2>Agendar serviço</h2>
+
+            <form id="formulario">
+
+                <div class="campo">
+                    <label for="nombre">Nome</label>
+                    <input type="text" id="nombre" placeholder="Escreva seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Número de telefone</label>
+                    <input type="tel" id="telefono" placeholder="Seu número" required>
+                </div>
+
+                <div class="campo">
+                    <label for="servicio">Selecione o serviço</label>
+
+                    <select id="servicio" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="30">Corte de cabelo (30 min) 35$</option>
+                        <option value="15">Barba (15 min) 20$</option>
+                        <option value="60">Combo completo (60 min) 55$</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="barbero">Escolha um barbeiro</label>
+
+                    <select id="barbero" required>
+                        <option value="">Selecione um profissional</option>
+                        <option value="Carlos">Carlos</option>
+                        <option value="Miguel">Miguel</option>
+                    </select>
+
+                    <div id="contenedor-foto-barbero" class="foto-barbero-oculto">
+                        <img id="foto-barbero" src="" alt="Foto do barbeiro">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Data</label>
+                    <input type="date" id="fecha" required>
+                </div>
+
+                <div class="campo">
+                    <label for="horario">Horário disponível</label>
+                    <select id="horario" required>
+                        <option value="">Selecione um serviço e uma data primeiro</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="boton">Agendar horário</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Barbearia Bunny. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- FIREBASE -->
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUfamPSEoP3qIy_MUifGR1X2ZBtyqz_tQ",
+            authDomain: "barberia-bunny-c0486.firebaseapp.com",
+            projectId: "barberia-bunny-c0486",
+            storageBucket: "barberia-bunny-c0486.firebasestorage.app",
+            messagingSenderId: "240230509007",
+            appId: "1:240230509007:web:82c6e08b72276ce35d4aba"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.db = db;
+        window.collection = collection;
+        window.addDoc = addDoc;
+        window.onSnapshot = onSnapshot;
+
+    </script>
+
+    <script type="module" src="script.js"></script>
+
+    <!-- NOTIFICACIÓN -->
+    <div id="notificacion" class="notificacion-ocultar">
+
+        <div class="notificacion-contenido">
+
+            <span class="icono-exito">✓</span>
+
+            <p id="notificacion-mensaje"></p>
+
+            <a id="btn-whatsapp-confirmar" href="#" target="_blank" class="boton-whatsapp-aviso">
+                Confirmar pelo WhatsApp 💬
+            </a>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
