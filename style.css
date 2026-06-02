@@ -36,7 +36,7 @@ body {
 
 .fondo-barberia {
 
-  position: static;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -174,8 +174,8 @@ margin-top: 5px;
 .container {
 width: 100%;
 max-width: 480px;
-width: 100%;
-max-width: 480px;
+
+
 margin-top: 180px;
 margin-bottom: 40px;
 }
@@ -310,7 +310,7 @@ font-size: 0.95rem;
 .agendamiento {
 padding: 30px 20px;
 }
-}
+
 
 
 /* Contenedor principal de la notificación profesional */
