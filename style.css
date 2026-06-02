@@ -36,7 +36,7 @@ body {
 
 .fondo-barberia {
 
-  position: relative;
+  position: static;
   top: 0;
   left: 0;
   right: 0;
