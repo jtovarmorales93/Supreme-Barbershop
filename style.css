@@ -83,7 +83,7 @@ html {
     z-index: 10;
     padding: 8px 15px;
     background: rgb(18, 17, 17);
-    border-bottom: 2px solid rgba(239, 217, 16, 0.406);
+    border-bottom: 1px solid rgba(228, 177, 9, 0.356);
     position: fixed;
     width: 100%;
     min-height: 175px;
@@ -223,7 +223,7 @@ html {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--blanco-puro);
+    color:rgb(201, 198, 194);
     font-weight: 600;
     position: relative;
 }
@@ -477,8 +477,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #605d5de9;
+    box-shadow: 0 1px 8px rgba(75, 73, 72, 0.895);
 
     /* Recorta la imagen proporcionalmente para que NO se estire */
     object-fit: cover;
