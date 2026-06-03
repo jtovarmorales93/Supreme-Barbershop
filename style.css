@@ -17,9 +17,7 @@
 body {
 
     font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.21), rgba(10, 10, 10, 0.82)),
-        url('assets/fondo-barberia2.jpg');
-
+   
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -52,7 +50,7 @@ body {
     height: 100vh; 
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.21), rgba(10, 10, 10, 0.82)),
-        url('assets/fondo-barberia.jpg');
+        url('assets/fondo-barberia2.jpg');
 
     background-size: cover;
     background-position: center center;
