@@ -162,6 +162,7 @@ word-wrap: break-word;
 min-height: 150px;
 padding: 10px;
 }
+}
 
 .titulo {
 padding: 5px 0px;
@@ -170,7 +171,7 @@ padding: 5px 0px;
 .bienvenida {
 margin-top: 5px;
 }
-}
+
 .container {
 width: 100%;
 max-width: 480px;
@@ -227,7 +228,7 @@ flex-direction: column;
 font-size: 0.8rem;
 color: var(--dorado-premium);
 margin-bottom: 8px;
-font-weight: 600px;
+font-weight: 600;
 text-transform: uppercase;
 letter-spacing: 1.5px;
 }
@@ -271,7 +272,7 @@ color: #0a0a0a;
 border: none;
 padding: 16px;
 font-size: 1.05rem;
-font-weight: 700px;
+font-weight: 700;
 border-radius: 8px;
 cursor: pointer;
 width: 100%;
@@ -310,7 +311,7 @@ font-size: 0.95rem;
 .agendamiento {
 padding: 30px 20px;
 }
-
+}
 
 
 /* Contenedor principal de la notificación profesional */
@@ -362,7 +363,7 @@ justify-content: center;
 #notificacion-mensaje {
 margin: 0;
 font-size: 16px;
-font-weight: 400px;
+font-weight: 400;
 line-height: 1.6;
 }
 
@@ -377,7 +378,7 @@ color: #2ecc71 !important;
 padding: 10px 20px;
 border-radius: 6px;
 text-decoration: none;
-font-weight: 600px;
+font-weight: 600;
 font-size: 14px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -457,7 +458,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
 object-fit: cover;
 object-position: center;
-
+}
 
 #notificacion.alerta-roja {
 background-color: #e74c3c;
