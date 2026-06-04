@@ -23,7 +23,7 @@
         body {
             min-height: 100vh;
             font-family: 'Poppins', sans-serif;
-            color: white;
+            color: rgb(208, 208, 208);
             background: url("assets/fondo-barberia1.jpg") no-repeat center center;
             background-size: cover;
             position: relative;
@@ -64,6 +64,26 @@
             font-weight: 700;
             letter-spacing: 2px;
 
+  background: linear-gradient(
+                135deg,
+                #4e3f1f 0%,
+                #5a5843 25%,
+                #f1d58c 50%,
+                #571c02 75%,
+                #aa771c 100%
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            background-size: 200% auto;
+            animation: brilhoMetalico 5s linear infinite;
+
+            text-shadow:
+                0 4px 10px rgba(0, 0, 0, .8),
+                0 0 25px rgba(218, 165, 32, .25);
+
           
         }
 
@@ -84,7 +104,7 @@
         header p {
             margin-top: 10px;
             font-size: 1rem;
-            color: #e4e4e4;
+            color: #e4e4e4d4;
             font-weight: 300;
         }
 
@@ -146,9 +166,9 @@
 
             line-height: 1.9;
 
-            color: rgba(255, 255, 255, 0.92);
+            color: rgba(255, 255, 255, 0.9);
 
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         /* BOTÃO */
@@ -247,10 +267,7 @@
             <h2>Tradição, estilo e personalidade</h2>
 
             <p>
-                Na Barbearia Nilson você encontra cortes modernos,
-                atendimento de qualidade e um ambiente profissional.
-                Trabalhamos para oferecer a melhor experiência,
-                valorizando seu estilo, sua imagem e seu tempo.
+                Cortes modernos, atendimento profissional e qualidade em cada detalhe. Valorize seu estilo na Barbearia Nilson.
             </p>
 
             <a href="index-agendamento.html" class="btn">

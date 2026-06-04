@@ -112,7 +112,24 @@ html {
   margin: 30px 8;
   
   /* Efecto de color dorado metálico brillante */
- 
+  background: linear-gradient(
+     135deg,
+  #995d21 0%,
+  #565353 40%,
+  #0c39cbf5 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Sombra 3D profunda y brillo elegante */
+  text-shadow: 
+    0px 4px 10px rgba(18, 17, 15, 0.621),
+    0px 0px 25px rgba(5, 11, 43, 0.986);
+  
+  /* Animación sutil de brillo continuo */
+  background-size: 200% auto;
+  animation: brilloMetalico 4s linear infinite;
 }
 
 /* Animación para el reflejo brillante */
