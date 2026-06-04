@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="preload" as="image" href="assets/img/fondo-barberia.webp"> 
-    <style>
+    <link rel="preload" as="image" href="assets/img/fondo-barberia.webp"> <style>
         * {
             margin: 0;
             padding: 0;
@@ -21,8 +20,8 @@
         body {
             min-height: 100vh;
             font-family: 'Poppins', sans-serif;
-            color: rgb(208, 208, 208);
-            background: url("assets/img/fondo-barberia.webp") no-repeat center center;
+           background-color:rgb(40, 40, 40);
+        background-image: url('assets/img/fondo-barberia.webp');
             background-size: cover;
             position: relative;
             display: flex;
@@ -38,11 +37,13 @@
                 linear-gradient(
                     to bottom,
                     rgba(0, 0, 0, 0.55),
-                    rgba(0, 0, 0, 0.45),
-                    rgba(0, 0, 0, 0.60)
+                    rgba(0, 0, 0, 0.548),
+                    rgba(0, 0, 0, 0.514)
                 );
             z-index: 0;
         }
+
+        
 
         header,
         main,
@@ -55,6 +56,7 @@
         header {
             text-align: center;
             padding: 25px 20px;
+            top: 20px;
         }
 
         header h1 {
@@ -100,7 +102,7 @@
         }
 
         header p {
-            margin-top: 10px;
+            margin-top: 18px;
             font-size: 1rem;
             color: #e4e4e4d4;
             font-weight: 300;
@@ -113,6 +115,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            top: 55px;
         }
 
         .card-apresentacao {
@@ -124,11 +127,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            padding: 20px;
+        
+            padding: 40px;
 
             text-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.9);
+                0 3px 10px rgba(0, 0, 0, 0.733);
 
             animation: fadeUp 1s ease;
         }
@@ -145,15 +148,37 @@
             }
         }
 
-        /* TÍTULO PRINCIPAL */
-        .card-apresentacao h2 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            max-width: 700px;
+        h2{
+      
+        color: rgb(212, 212, 212);
+        
+        z-index: 10;        
+        
         }
+
+
+/* El contenedor fija el texto en el lugar exacto de tu imagen */
+.contenedor-posicion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    /* CONTROLADOR DE POSICIÓN: Ajusta este % si quieres moverlo más arriba o abajo */
+    margin-top: 6vh; /* Se adapta al alto de cualquier pantalla de celular o PC */
+}
+
+/* El h2 se adapta de tamaño para nunca desacomodarse */
+.contenedor-posicion h2 {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin: 0;
+    
+    /* TAMAÑO RESPONSIVO: Se encoge en celulares y crece en monitores solo */
+    font-size: clamp(2.2rem, 5vw, 4rem); 
+}
+
+        
 
         /* TEXTO */
         .card-apresentacao p {
@@ -216,9 +241,15 @@
                 padding: 20px 15px;
             }
 
-            .card-apresentacao h2 {
+            .card-apresentacao  {
                 font-size: 2.3rem;
             }
+
+           h2{
+         
+             font-size: 2.3rem;
+            }
+        
 
             .card-apresentacao p {
                 font-size: .95rem;
@@ -251,18 +282,22 @@
 
 <body>
 
-    <!-- HEADER -->
+   
+
     <header>
         <h1>Barbearia Nilson</h1>
         <p>Agende seu horário em poucos cliques</p>
     </header>
 
-    <!-- APRESENTAÇÃO -->
+   <div class="contenedor-posicion">
+    <h2>Tradição, estilo e personalidade</h2>
+</div>
+
     <main>
 
         <div class="card-apresentacao">
 
-            <h2>Tradição, estilo e personalidade</h2>
+           
 
             <p>
                 Cortes modernos, atendimento profissional e qualidade em cada detalhe. Valorize seu estilo na Barbearia Nilson.
