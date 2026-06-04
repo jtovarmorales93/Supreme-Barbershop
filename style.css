@@ -50,7 +50,7 @@ body {
     height: 100vh; 
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.21), rgba(10, 10, 10, 0.82)),
-        url('assets/fondo-barberia2.jpg');
+        url('assets/img/fondo-barberia.webp');
 
     background-size: cover;
     background-position: center center;
