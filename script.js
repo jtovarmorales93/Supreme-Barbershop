@@ -119,13 +119,15 @@ function minutosAHora(minutos) {
 // Obtener fecha de hoy
 function obtenerFechaHoy() {
 
-    const hoy = new Date();
-
     const yyyy = hoy.getFullYear();
     const mm = String(hoy.getMonth() + 1).padStart(2, '0');
     const dd = String(hoy.getDate()).padStart(2, '0');
 
     return `${yyyy}-${mm}-${dd}`;
+
+
+
+   
 
 }
 
@@ -148,6 +150,7 @@ function formatearFechaAmigable(fechaTexto) {
 
     return fechaFormateada.charAt(0).toUpperCase() +
         fechaFormateada.slice(1);
+
 
 }
 

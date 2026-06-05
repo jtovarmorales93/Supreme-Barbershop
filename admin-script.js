@@ -38,13 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const fila = document.createElement('tr');
 
             fila.innerHTML = `
-                <td><strong>${cita.cliente}</strong></td>
-                <td>${cita.telefono}</td>
-                <td>${cita.barbero}</td>
-                <td>${cita.fecha}</td>
-                <td>${cita.inicio} hs - ${cita.fin} hs</td>
-                <td>${cita.servicio || 'No especificado'}</td>
-                <td>
+               <td><strong>${cita.cliente}</strong></td>
+
+<td>${cita.telefono}</td>
+
+<td>${cita.inicio} hs - ${cita.fin} hs</td>
+
+<td>${cita.fecha}</td>
+
+<td>${cita.barbero}</td>
+
+<td>${cita.servicio || 'No especificado'}</td>
+
+<td>
                     <button class="btn-eliminar" data-id="${cita.id}">Cancelar ❌</button>
                 </td>
             `;
