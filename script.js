@@ -16,6 +16,8 @@ const fotosBarberos = {
 let citasReservadas = [];
 
 
+
+
 // ======================================================
 // ELEMENTOS DEL DOM
 // ======================================================
@@ -82,7 +84,10 @@ if (window.onSnapshot && window.collection && window.db) {
             calcularHorariosDisponibles();
         }
 
-    );
+    
+     );
+
+   
 
 } else {
 
@@ -118,7 +123,7 @@ function minutosAHora(minutos) {
 
 // Obtener fecha de hoy
 function obtenerFechaHoy() {
-
+    const hoy = new Date();
     const yyyy = hoy.getFullYear();
     const mm = String(hoy.getMonth() + 1).padStart(2, '0');
     const dd = String(hoy.getDate()).padStart(2, '0');
@@ -329,6 +334,9 @@ function calcularHorariosDisponibles() {
             }
 
         }
+
+      
+        
 
         // Crear opción disponible
         if (horarioLibre) {
