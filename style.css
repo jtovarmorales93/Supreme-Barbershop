@@ -203,7 +203,7 @@ html {
 .agendamiento {
     
 
-background-color: rgba(14, 13, 13, 0.578); /* 1. Fondo semi-transparente obligatorio */
+background-color: rgba(14, 13, 13, 0.623); /* 1. Fondo semi-transparente obligatorio */
   
   /* 2. Soporte oficial para Safari en iPhone */
   -webkit-backdrop-filter: blur(1.5px) saturate(140%); 
