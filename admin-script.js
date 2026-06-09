@@ -185,7 +185,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ======================================================
-// para bloquear horarios FUNÇÕES AUXILIARES DE TEMPO (Cópia idêntica do seu app)
+// CONFIGURACIÓN E IMPORTACIÓN DIRECTA DE FIREBASE REAL
+// ======================================================
+import { initializeApp } from "https://gstatic.com";
+import { getFirestore, collection, addDoc } from "https://gstatic.com";
+
+// Credenciales reales de Barberia Bunny
+const firebaseConfig = {
+    apiKey: "AIzaSyBUfamPSEoP3qIy_MUifGR1X2ZBtyqz_tQ",
+    authDomain: "barberia-bunny-c0486.firebaseapp.com",
+    projectId: "barberia-bunny-c0486",
+    storageBucket: "barberia-bunny-c0486.firebasestorage.app",
+    messagingSenderId: "240230509007",
+    appId: "1:240230509007:web:82c6e08b72276ce35d4aba"
+};
+
+// Inicializamos Firebase de forma aislada y segura para el Admin
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ======================================================
+// FUNÇÕES AUXILIARES DE TEMPO (Idênticas ao seu app)
 // ======================================================
 function horaAMinutos(horaTexto) {
     const [h, m] = horaTexto.split(':').map(Number);
@@ -194,7 +214,7 @@ function horaAMinutos(horaTexto) {
 
 function minutosAHora(minutos) {
     const h = Math.floor(minutos / 60);
-    const m = minutos % 60;
+    const m = minutes % 60;
     return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
 }
 
@@ -204,22 +224,22 @@ function minutosAHora(minutos) {
 document.getElementById('form-bloqueio-admin').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Captura os valores digitados pelo barbeiro no admin
+    // Captura los valores de la interfaz del administrador
     const fecha = document.getElementById('bloqueio-fecha').value;
     const barbero = document.getElementById('bloqueio-barbero').value;
     const horaInicio = document.getElementById('bloqueio-inicio').value;
     const duracion = document.getElementById('bloqueio-duracion').value;
 
-    // Calcula o horário de término do bloqueio automaticamente
+    // Cálculos de intervalos en base a tus bloques de 15 min
     const minInicio = horaAMinutos(horaInicio);
     const minFin = minInicio + parseInt(duracion);
     const horaFinText = minutosAHora(minFin);
 
-    // Monta o objeto exatamente no padrão que o seu app de clientes já reconhece
+    // Objeto estructurado idéntico a lo que tu app de clientes ya sabe leer
     const nuevaCitaBloqueio = {
         nombre: "HORÁRIO BLOQUEADO (ADMIN)",
-        telefono: "0000000000", // Apenas para passar em validações de número
-        fecha: fecha,           // Formato YYYY-MM-DD
+        telefono: "0000000000", 
+        fecha: fecha,           
         barbero: barbero,       
         servicio: duracion + "min",
         inicio: horaInicio,
@@ -227,22 +247,16 @@ document.getElementById('form-bloqueio-admin').addEventListener('submit', async 
     };
 
     try {
-        // Envia direto para a mesma coleção "citas" do Firebase
-        if (window.addDoc && window.collection && window.db) {
-            
-            await window.addDoc(
-                window.collection(window.db, "citas"),
-                nuevaCitaBloqueio
-            );
-            
-            alert(`Sucesso! O horário das ${horaInicio} às ${horaFinText} foi bloqueado para o barbeiro ${barbero}.`);
-            document.getElementById('form-bloqueio-admin').reset(); // Limpa o formulário
-            
-        } else {
-            alert("Erro: O Firebase não foi carregado corretamente nesta página de administração.");
-        }
+        // Guardado directo en la colección "citas" de Firebase
+        await addDoc(collection(db, "citas"), nuevaCitaBloqueio);
+        
+        // Alerta de confirmación para el barbero
+        alert(`Sucesso! Horário das ${horaInicio} às ${horaFinText} bloqueado para o barbeiro ${barbero}.`);
+        document.getElementById('form-bloqueio-admin').reset();
+        
     } catch (error) {
         console.error("Erro ao salvar o bloqueio no Firebase:", error);
-        alert("Ocorreu um erro ao tentar bloquear o horário.");
+        alert("Ocorreu um erro ao tentar salvar no Firebase. Abra o console (F12) para ver os detalhes.");
     }
 });
+
