@@ -144,7 +144,7 @@ html {
 
 
 .bienvenida {
-    color: rgb(203, 203, 203);
+    color: rgb(219, 218, 218);
 
     /* RESPONSIVO */
     font-size: clamp(13px, 2vw, 17px);
@@ -201,13 +201,13 @@ html {
 }
 
 .agendamiento {
-      background-color: rgba(36, 35, 35, 0.397); /* 1. Fondo semi-transparente obligatorio */
+      background-color: rgba(36, 35, 35, 0.532); /* 1. Fondo semi-transparente obligatorio */
   
   /* 2. Soporte oficial para Safari en iPhone */
   -webkit-backdrop-filter: blur(1.5px) saturate(140%); 
   
   /* 3. Soporte para Android y otros navegadores */
-  backdrop-filter: blur(0.7px) saturate(140%);
+  backdrop-filter: blur(0.8px) saturate(140%);
   
   /* 4. Aceleración por Hardware para evitar que se vea "envasado" o lento en iOS */
   will-change: transform, opacity, filter;
@@ -226,7 +226,7 @@ html {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color:rgb(159, 155, 155);
+    color:rgba(220, 220, 220, 0.968);
     font-weight: 600;
     position: relative;
 }
