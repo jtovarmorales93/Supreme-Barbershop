@@ -182,3 +182,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// ======================================================
+// para bloquear horarios FUNÇÕES AUXILIARES DE TEMPO (Cópia idêntica do seu app)
+// ======================================================
+function horaAMinutos(horaTexto) {
+    const [h, m] = horaTexto.split(':').map(Number);
+    return (h * 60) + m;
+}
+
+function minutosAHora(minutos) {
+    const h = Math.floor(minutos / 60);
+    const m = minutos % 60;
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+}
+
+// ======================================================
+// EVENTO DO FORMULÁRIO DE BLOQUEIO
+// ======================================================
+document.getElementById('form-bloqueio-admin').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Captura os valores digitados pelo barbeiro no admin
+    const fecha = document.getElementById('bloqueio-fecha').value;
+    const barbero = document.getElementById('bloqueio-barbero').value;
+    const horaInicio = document.getElementById('bloqueio-inicio').value;
+    const duracion = document.getElementById('bloqueio-duracion').value;
+
+    // Calcula o horário de término do bloqueio automaticamente
+    const minInicio = horaAMinutos(horaInicio);
+    const minFin = minInicio + parseInt(duracion);
+    const horaFinText = minutosAHora(minFin);
+
+    // Monta o objeto exatamente no padrão que o seu app de clientes já reconhece
+    const nuevaCitaBloqueio = {
+        nombre: "HORÁRIO BLOQUEADO (ADMIN)",
+        telefono: "0000000000", // Apenas para passar em validações de número
+        fecha: fecha,           // Formato YYYY-MM-DD
+        barbero: barbero,       
+        servicio: duracion + "min",
+        inicio: horaInicio,
+        fin: horaFinText
+    };
+
+    try {
+        // Envia direto para a mesma coleção "citas" do Firebase
+        if (window.addDoc && window.collection && window.db) {
+            
+            await window.addDoc(
+                window.collection(window.db, "citas"),
+                nuevaCitaBloqueio
+            );
+            
+            alert(`Sucesso! O horário das ${horaInicio} às ${horaFinText} foi bloqueado para o barbeiro ${barbero}.`);
+            document.getElementById('form-bloqueio-admin').reset(); // Limpa o formulário
+            
+        } else {
+            alert("Erro: O Firebase não foi carregado corretamente nesta página de administração.");
+        }
+    } catch (error) {
+        console.error("Erro ao salvar o bloqueio no Firebase:", error);
+        alert("Ocorreu um erro ao tentar bloquear o horário.");
+    }
+});
