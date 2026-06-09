@@ -217,7 +217,7 @@ html {
 
    box-sizing: border-box;
   width: 100%;
-  max-width: 380px;
+  max-width: 380;
 }
 
 .agendamiento h2 {
