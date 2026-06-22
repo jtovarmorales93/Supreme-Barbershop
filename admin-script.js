@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. BORRAR AGENDA DESDE LA NUBE
+    
     function asignarEventosEliminar() {
         const botones = document.querySelectorAll('.btn-eliminar');
         botones.forEach((boton) => {
