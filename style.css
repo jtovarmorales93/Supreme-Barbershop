@@ -162,8 +162,8 @@ html {
   
   /* Sombra 3D profunda y brillo elegante */
   text-shadow: 
-    6px 5px 20px rgba(172, 38, 38, 0.89),
-    0px 0px 0px rgba(197, 193, 193, 0.986);
+    6px 5px 20px rgba(53, 48, 48, 0.89),
+    0px 0px 0px rgba(209, 203, 203, 0.986);
   
   /* Animación sutil de brillo continuo */
   background-size: 200% auto;
