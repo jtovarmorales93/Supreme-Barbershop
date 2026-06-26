@@ -1,4 +1,4 @@
-# 💈 Barbearia Supreme - Sistema de Agendamento Online
+# 💈 Supreme Barbershop - Sistema de Agendamento Online
 
 > Uma solução simples, rápida e intuitiva para clientes agendarem cortes de cabelo e barbeiros gerenciarem sua agenda diária sem perda de tempo.
 
@@ -34,7 +34,7 @@ Para rodar este projeto localmente, você precisará de:
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/jtovarmorales93/Barbearia-Supreme.git
+   git clone https://github.com/jtovarmorales93/Supreme-Barbershop.git
    ```
 
 2. 2. **Configure o Firebase:**
